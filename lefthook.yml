@@ -1,0 +1,34 @@
+# Lefthook configuration
+# https://lefthook.dev/configuration/
+
+# Pre-commit hook - runs before commit is created
+pre-commit:
+  parallel: true
+  commands:
+    # Run Biome linter on staged files
+    lint:
+      glob: "*.{js,ts,jsx,tsx,json}"
+      run: pnpm exec biome check --write --unsafe --files-ignore-unknown=true --no-errors-on-unmatched {staged_files}
+      stage_fixed: true
+
+    # Type check
+    type-check:
+      run: pnpm type-check
+
+# Commit-msg hook - validates commit message format
+commit-msg:
+  commands:
+    # Validate commit message with commitlint
+    commitlint:
+      run: pnpm exec commitlint --edit {1}
+
+# Pre-push hook - runs before pushing to remote
+pre-push:
+  commands:
+    # Run tests if they exist
+    # test:
+    #   run: pnpm test
+
+    # Build check
+    build:
+      run: pnpm build
