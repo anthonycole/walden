@@ -1,0 +1,63 @@
+{
+	"name": "walden",
+	"version": "0.0.5-beta",
+	"private": true,
+	"scripts": {
+		"dev": "next dev & storybook dev -p 6006 --no-open & wait",
+		"dev:web": "next dev",
+		"dev:storybook": "storybook dev -p 6006",
+		"build": "next build",
+		"start": "next start",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"lint": "biome check --error-on-warnings .",
+		"lint:fix": "biome check --write --unsafe .",
+		"format": "biome format --write .",
+		"format:check": "biome format .",
+		"type-check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@chakra-ui/charts": "^3.28.0",
+		"@chakra-ui/react": "^3.27.1",
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.1",
+		"@tanstack/react-query": "^5.90.5",
+		"@tanstack/react-table": "^8.21.3",
+		"csv-parse": "^6.1.0",
+		"date-fns": "^4.1.0",
+		"framer-motion": "^12.23.24",
+		"iconoir-react": "^7.12.1",
+		"next": "16.4.3",
+		"react": "19.3.0",
+		"react-dom": "19.3.0",
+		"recharts": "^3.3.0",
+		"tsx": "^4.20.6"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.0",
+		"@chromatic-com/storybook": "^5.6.0",
+		"@commitlint/cli": "^20.1.0",
+		"@commitlint/config-conventional": "^20.0.0",
+		"@storybook/addon-docs": "^10.6.5",
+		"@storybook/addon-onboarding": "^10.6.5",
+		"@storybook/nextjs": "^10.6.5",
+		"@storybook/react": "^10.6.5",
+		"@types/node": "^20",
+		"@types/react": "19.3.0",
+		"@types/react-dom": "19.3.0",
+		"lefthook": "^2.0.0",
+		"storybook": "^10.6.5",
+		"typescript": "^5"
+	},
+	"pnpm": {
+		"ignoredBuiltDependencies": [
+			"canvas",
+			"esbuild",
+			"sharp"
+		]
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"packageManager": "pnpm@9.15.0"
+}

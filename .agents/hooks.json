@@ -1,0 +1,17 @@
+{
+	"biome-auto-format": {
+		"enabled": true,
+		"PostToolUse": [
+			{
+				"matcher": ".*(edit|write|replace).*",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "./scripts/biome-format.sh",
+						"timeout": 10
+					}
+				]
+			}
+		]
+	}
+}
